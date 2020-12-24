@@ -80,7 +80,7 @@
         </div>
 
         <div class="row">
-          <!-- Diagrams -->
+          
           <div class="col-xs-12 col-md-12 pt-md-5 box-formatting">
             <h2>Latest Mars News</h2>
             <hr>
@@ -91,21 +91,41 @@
 
         </div>
 
-      </div>
-      <hr>
+        <hr>
 
-      <div class="container">
         <div class="row">
-          <div class="col-md-12">
-
+          <div class="col-xs-12 col-md-8">
+            <h2>Featured Mars Image</h2>
+            <hr>
+            <img src="{{mars_data.featured_img}}" class="vis-img">
+          </div>
+          <div class="col-xs-12 col-md-4">
+            <h2>Mars Facts</h2>
+            <hr>
+            {{mars_data.mars_fact|safe}}
           </div>
         </div>
         
+        <center><h2>Mars Hemispheres</h2></center>
+        <hr>
+
+        <div class="row">
+          
+          {% for hemisphere in mars_data.hemisphere_img %}
+          <div class="col-sm-12 col-md-6">
+            <figure>
+              <img src="{{hemisphere.img_url}}" class="img-thumbnail rounded">
+              <figcaption><h4>{{hemisphere.title}}</h4></figcaption>
+            </figure>
+          </div>
+          {% endfor %}
+        </div>
+
       </div>
       <hr>
 
     </main>
-    
+
     <footer class="container">
       <p>&copy; Kelvin Deng @ UoT Data Analytics</p>
     </footer>
