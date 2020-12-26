@@ -11,6 +11,8 @@
     <!-- Personal css -->
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" media="screen">
     
+    <script src="{{url_for('static', filename='js/button.js')}}"></script>
+
     <title>Mars Data Scrape Kit</title>
   </head>
 
@@ -69,10 +71,12 @@
             <div class="jumbotron">
               <center><h1>Mission to Mars</h1></center>
               <hr>
-              <div class="container">
-                <center><a class="btn btn-primary btn-md" href="scrape" role="button">Scrape New Data &raquo;</a></center>
-                
+              <div class="buttonbox">
+                <center><a href="scrape"><button type="button" id="btnFetch" class="btn btn-primary mb-2">Scrape New Data &raquo;</button></a></center>
               </div>
+              <!-- <div class="container">
+                <center><a id="btnFetch" class="btn btn-primary btn-md" href="scrape" role="button">Scrape New Data &raquo;</a></center>
+              </div> -->
               
               
             </div>
@@ -84,7 +88,7 @@
           <div class="col-xs-12 col-md-12 pt-md-5 box-formatting">
             <h2>Latest Mars News</h2>
             <hr>
-            <h4>{{mars_data.news_title}}</h4>
+            <h5>{{mars_data.news_title}}</h5>
             <p>{{mars_data.news_p}}</p>
             
           </div>
@@ -113,8 +117,8 @@
           
           {% for hemisphere in mars_data.hemisphere_img %}
           <div class="col-sm-12 col-md-6">
-            <figure>
-              <img src="{{hemisphere.img_url}}" class="img-thumbnail rounded">
+            <figure class="vis-img-border">
+              <img src="{{hemisphere.img_url}}" class="img-thumbnail">
               <figcaption><h4>{{hemisphere.title}}</h4></figcaption>
             </figure>
           </div>
