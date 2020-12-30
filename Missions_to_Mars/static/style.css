@@ -13,6 +13,11 @@ h4 {
     font-size: 18px;
 }
 
+.header-light {
+    text-align: center;
+    color: #ffb184;
+}
+
 .body { 
     padding-top: 90px; 
 }
@@ -24,7 +29,7 @@ h4 {
 .box-formatting {
     background-color: #f0f0f0;
     border-radius: 10px;
-    padding-bottom: 40px;
+    padding: 40px;
 }
 
 .img-m {

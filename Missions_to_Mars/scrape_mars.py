@@ -111,8 +111,6 @@ def get_hemispheres(url):
 
         # Get into each article url to get image url
         article_response = session.get(article_url)
-        # browser.visit(article_url)
-        # article_response = browser.html
         article_soup = bs(article_response.text, "html.parser")
         
         # Find the <a> tag with text 'Sample" in the page, then get its img url
@@ -146,7 +144,6 @@ def scrape():
 
     list_hemispheres = get_hemispheres(
         "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars")
-    
 
     # Gather all scraped data into a python dictionary
     mars_data = {

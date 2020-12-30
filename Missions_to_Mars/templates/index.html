@@ -42,38 +42,33 @@
         <!-- Header for scraping button -->
         <div class="row">
           <div class="col-xs-12 col-md-12">
-            <div class="jumbotron bg-image">
+            <div class="jumbotron bg-image shadow">
               <h1>Mission to Mars</h1>
               <hr>
-              <center><a class="btn btn-light mb-2" href="scrape" role="button">Land on Mars Now &raquo;</a></center>
-              
+              <center><a class="btn btn-danger mb-2" href="scrape" role="button">Land on Mars Now &raquo;</a></center>
+              <h4 class="header-light">Click button to start web-scraping for Mars News and Information.</h4>
             </div>
           </div>
         </div>
 
+        <!-- Notify user db has no record  -->
+        {% if mars_data == None %}
+        <div class="row">
+          <div class="col-xs-12 col-md-12 pt-md-5 box-formatting">
+            <h4>Mars DB has no record. Please scrape first.</h4>
+          </div>
+
+        </div>
+
+        <!-- If db has record, render page -->
+        {% else %}
         <!-- Latest Mars News -->
         <div class="row">
           <div class="col-xs-12 col-md-12 pt-md-5 box-formatting">
-            <h1>The onclick Event</h1>
-
-            <p>The onclick event is used to trigger a function when an element is clicked on.</p>
-
-            <p>Click the button to trigger a function that will output "Hello World" in a p element with id="demo".</p>
-
-            <button onclick="ClickButton()">Click me</button>
-
-            <p id="demo"></p>
-
-            <button type="button" class="btn btn-primary btn-lg " id="load1" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing Order">Submit Order</button>
-            <br>
-            <br>
-            <button type="button" class="btn btn-primary btn-lg" id="load2" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing Order">Submit Order</button>
-            <!-- <h2>Latest Mars News</h2>
+            <h2>Latest Mars News</h2>
             <hr>
-            <button type="button" class="btn" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing Order">Submit Order</button>
-            <button onclick="ClickButton()">Click me</button>
             <h5>{{mars_data.news_title}}</h5>
-            <p>{{mars_data.news_p}}</p> -->
+            <p>{{mars_data.news_p}}</p>
           </div>
 
         </div>
@@ -114,6 +109,9 @@
 
         </div>
 
+        <!-- Enf of Jinja2 if statement -->
+        {% endif %}
+
       </div>
       <hr>
 
@@ -125,17 +123,6 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-    <script>
-      $('.btn').on('click', function() {
-          var $this = $(this);
-        $this.button('loading');
-          setTimeout(function() {
-            $this.button('reset');
-        }, 8000);
-      });
-    </script>
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

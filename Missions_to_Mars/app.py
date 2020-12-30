@@ -13,6 +13,7 @@ collection = db.mars
 # Root route for homepage
 @app.route("/")
 def index():
+    # Find the latest document from mars_db by sorting
     mars_data = collection.find_one(sort=[( '_id', pymongo.DESCENDING )])
     return render_template("index.html", mars_data = mars_data)
 
