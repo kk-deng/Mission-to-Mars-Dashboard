@@ -67,6 +67,25 @@ mars_data = {
 }
 ```
 
+* A Jinja2 if statement was used in `index.html` to display the div based on the availability of MongoDB collections:
+```html
+
+<!-- Notify user db has no record  -->
+{% if mars_data == None %}
+<div class="row">
+...
+</div>
+
+<!-- If db has record, render page -->
+{% else %}
+<div class="row">
+...
+</div>
+
+<!-- Enf of Jinja2 if statement -->
+{% endif %}
+```
+
 ## File Index
 
 Following files are attached:
