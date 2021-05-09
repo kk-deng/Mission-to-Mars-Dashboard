@@ -1,4 +1,4 @@
-# Web-Scraping-Challenge
+# Mission to Mars (Web Scraping Tool)
 This project builds a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page
 
 <img src="https://github.com/kk-deng/Web-Scraping-Challenge/blob/main/Missions_to_Mars/static/header.jpg?raw=true">
